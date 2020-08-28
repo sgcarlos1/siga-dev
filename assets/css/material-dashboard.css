@@ -11638,7 +11638,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
       box-shadow: none; } }
   .card .card-header {
     border-bottom: none;
-    background: linear-gradient(60deg, #02af36, #3ce073); }
+    background: transparent; }
     .card .card-header .title {
       color: #fff; }
     .card .card-header .nav-tabs {
