@@ -1,20 +1,21 @@
 <?php
 session_start();
+include('limpa_string.php');
 include('conexao.php');
 include('valida_cpf.php');
 
 $indicador = mysqli_real_escape_string($conexao, $_POST['indicador']);
-$cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
-$nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-$nascimento = mysqli_real_escape_string($conexao, $_POST['nascimento']);
-$telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
+$cpf = sanitizeString(mysqli_real_escape_string($conexao, $_POST['cpf']));
+$nome = sanitizeString(mysqli_real_escape_string($conexao, $_POST['nome']));
+$nascimento = sanitizeString(mysqli_real_escape_string($conexao, $_POST['nascimento']));
+$telefone = sanitizeString(mysqli_real_escape_string($conexao, $_POST['telefone']));
 $email = mysqli_real_escape_string($conexao, $_POST['email']);
 
-$consul = $_POST['uf'].$_POST['cidade'].$_POST['bairro'].$_POST['logradouro'].$_POST['nr_end'].$_POST['cep'];
-$endereco = mysqli_real_escape_string($conexao, $consul);
+$consul = $_POST['uf'] . '_' . $_POST['cidade'] . '_' . $_POST['bairro'] . '_' . $_POST['logradouro'] . '_' . $_POST['nr_end'] . '_' . sanitizeString($_POST['cep']);
+$endereco = mysqli_real_escape_string($conexao, "$consul");
 
-$usuario = mysqli_real_escape_string($conexao, trim($_POST['usuario']));
-$senha = mysqli_real_escape_string($conexao, trim(md5($_POST['senha'])));
+$usuario = sanitizeString(mysqli_real_escape_string($conexao, trim($_POST['usuario'])));
+$senha = sanitizeString(mysqli_real_escape_string($conexao, trim(md5($_POST['senha']))));
 
 if (isset($_SESSION['usuario'])) {
     if (validaCPF($cpf) == false) {
@@ -47,7 +48,7 @@ if (isset($_SESSION['usuario'])) {
 } else {
     if ($row['total'] == 1) :
         $_SESSION['usuario_existe'] = true;
-        header("location: cadastrar_consultor_externo.php". $indicador);
+        header("location: cadastrar_consultor_externo.php" . $indicador);
         exit;
     endif;
 }
@@ -55,7 +56,7 @@ if (isset($_SESSION['usuario'])) {
 if (isset($_SESSION['usuario'])) {
     if ($row2['total2'] == 1) :
         $_SESSION['cpf_existe'] = true;
-        header("location: cadastrar_consultor_externo.php". $indicador);
+        header("location: cadastrar_consultor_externo.php" . $indicador);
         exit;
     endif;
 } else {
@@ -77,4 +78,15 @@ if ($conexao->query($query) === true) {
         header('location: cadastrar_consultor_externo.php' . $_GET['indicador']);
         exit;
     }
+} else {
+    if (isset($_SESSION['usuario'])) {
+        header('location: cadastrar_consultor.php');
+        echo '<script>alert("Erro no cadastro");</script>';
+        exit;
+    } else {
+        header('location: cadastrar_consultor_externo.php' . $_GET['indicador']);
+        echo '<script>alert("Erro no cadastro");</script>';
+        exit;
+    }
 }
+exit;

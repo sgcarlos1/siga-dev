@@ -215,7 +215,7 @@ include('verifica_login.php');
                     <div class="form-group col-md-3">
                       <i class="material-icons prefix">add_location</i>
                       <label for="cep" class="active">Cep</label>
-                      <input class="form-control" type="tel" placeholder="Informe o Cep" id="cep" name="cep" autofocus required>
+                      <input class="form-control" type="tel" placeholder="Informe o Cep" id="cep" name="cep" required>
                     </div>
 
                     <div class="form-group col-md-3">
@@ -256,51 +256,49 @@ include('verifica_login.php');
 
                 <div class="step" id="step_3">
 
+                  <div class="alert alert-primary col-md-3 p-1">
+                    <h4>Dados de Login<h4>
+                  </div>
+                  <div class="form- group col-md-12"></div>
+                  <div class="form-group col-md-4">
+                    <i class="material-icons prefix">face</i>
+                    <label for="usuario">Usuario</label>
+                    <?php
+                    if (isset($_SESSION['usuario_existe'])) :
+                      echo "<script>alert('Erro no cadastro');</script>";
+                    ?>
+                      <div class="alert alert-danger ml-5 my-auto p-2" role="alert" style="display: inline">
+                        Usuario já registrado
+                      </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['usuario_existe']);
+                    ?>
 
-                  <div class="form">
-                    <div class="alert alert-primary col-md-3 p-1">
-                      <h4>Dados de Login<h4>
-                    </div>
-                    <div class="form- group col-md-12"></div>
-                    <div class="form-group col-md-4">
-                      <i class="material-icons prefix">face</i>
-                      <label for="usuario">Usuario</label>
-                      <?php
-                      if (isset($_SESSION['usuario_existe'])) :
-                        echo "<script>alert('Erro no cadastro');</script>";
-                      ?>
-                        <div class="alert alert-danger ml-5 my-auto p-2" role="alert" style="display: inline">
-                          Usuario já registrado
-                        </div>
-                      <?php
-                      endif;
-                      unset($_SESSION['usuario_existe']);
-                      ?>
+                    <input name="usuario" class="form-control" id="usuario" type="text" placeholder="Exemplo: joao123" required>
+                  </div>
 
-                      <input name="usuario" class="form-control" id="usuario" type="text" placeholder="Exemplo: joao123" required>
-                    </div>
+                  <div class="form-group col-md-4">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <label for="senha">Senha</label>
+                    <input name="senha" class="form-control" id="senha" type="password" placeholder="Sua senha" required>
+                  </div>
 
-                    <div class="form-group col-md-4">
-                      <i class="material-icons prefix">vpn_key</i>
-                      <label for="senha">Senha</label>
-                      <input name="senha" class="form-control" id="senha" type="password" placeholder="Sua senha" required>
-                    </div>
+                  <div class="form-group col-md-4">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <label for="senha">Confirmar Senha</label>
+                    <input name="confirma_senha" class="form-control" id="confirma_senha" type="password" placeholder="Sua senha" required>
+                  </div>
 
-                    <div class="form-group col-md-4">
-                      <i class="material-icons prefix">vpn_key</i>
-                      <label for="senha">Confirmar Senha</label>
-                      <input name="confirma_senha" class="form-control" id="confirma_senha" type="password" placeholder="Sua senha" required>
-                    </div>
-
-                    <div class="form-group mx-auto">
-                      <button class="btn btn-lg btn-primary align-items-center" type="submit">
-                        <span>Enviar</span>
-                        <i class="material-icons right">send</i>
-                      </button>
-                    </div>
+                  <div class="form-group mx-auto">
+                    <button class="btn btn-lg btn-primary align-items-center" type="submit">
+                      <span>Enviar</span>
+                      <i class="material-icons right">send</i>
+                    </button>
                   </div>
                 </div>
               </form>
+              
               <?php
               if (isset($_SESSION['cadastro_sucedido'])) :
                 echo "<script>alert('Cadastro bem sucedido');</script>";

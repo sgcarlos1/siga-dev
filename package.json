@@ -48,6 +48,7 @@
     "bootstrap": "^4.5.2",
     "dashboard": "0.0.1",
     "jquery": "^3.5.1",
+    "jquery-validation": "^1.19.2",
     "ngx-bootstrap": "^5.6.1",
     "popper.js": "^1.16.1"
   }
