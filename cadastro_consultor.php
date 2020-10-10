@@ -48,7 +48,7 @@ if (isset($_SESSION['usuario'])) {
 } else {
     if ($row['total'] == 1) :
         $_SESSION['usuario_existe'] = true;
-        header("location: cadastrar_consultor_externo.php" . $indicador);
+        header("location: cadastrar_consultor_externo.php?=" . $indicador);
         exit;
     endif;
 }
@@ -56,7 +56,7 @@ if (isset($_SESSION['usuario'])) {
 if (isset($_SESSION['usuario'])) {
     if ($row2['total2'] == 1) :
         $_SESSION['cpf_existe'] = true;
-        header("location: cadastrar_consultor_externo.php" . $indicador);
+        header("location: cadastrar_consultor_externo.php?=" . $indicador);
         exit;
     endif;
 } else {
@@ -75,7 +75,7 @@ if ($conexao->query($query) === true) {
         header('location: cadastrar_consultor.php');
         exit;
     } else {
-        header('location: cadastrar_consultor_externo.php' . $_GET['indicador']);
+        header('location: cadastrar_consultor_externo.php?indicador=' . $indicador);
         exit;
     }
 } else {
@@ -84,7 +84,7 @@ if ($conexao->query($query) === true) {
         echo '<script>alert("Erro no cadastro");</script>';
         exit;
     } else {
-        header('location: cadastrar_consultor_externo.php' . $_GET['indicador']);
+        header('location: cadastrar_consultor_externo.php?indicador=' . $indicador);
         echo '<script>alert("Erro no cadastro");</script>';
         exit;
     }

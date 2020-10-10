@@ -271,8 +271,9 @@ include('verifica_login.php');
                         Usuario já registrado
                       </div>
                     <?php
+                      unset($_SESSION['usuario_existe']);
                     endif;
-                    unset($_SESSION['usuario_existe']);
+
                     ?>
 
                     <input name="usuario" class="form-control" id="usuario" type="text" placeholder="Exemplo: joao123" required>
@@ -298,12 +299,12 @@ include('verifica_login.php');
                   </div>
                 </div>
               </form>
-              
+
               <?php
               if (isset($_SESSION['cadastro_sucedido'])) :
                 echo "<script>alert('Cadastro bem sucedido');</script>";
+                unset($_SESSION['cadastro_sucedido']);
               endif;
-              unset($_SESSION['cadastro_sucedido']);
               ?>
 
               <div class="row">
