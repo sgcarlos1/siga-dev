@@ -59,6 +59,13 @@ include('verifica_login.php');
               <i class="material-icons">group_add</i>
               <p>Cadastrar Consultor</p>
             </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="cadastrar_cliente.php">
+              <i class="material-icons">group_add</i>
+              <p>Cadastrar Cliente</p>
+            </a>
+          </li>
           <li class="nav-item active  ">
             <a class="nav-link" href="meus_clientes.php">
               <i class="material-icons">supervisor_account</i>

@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 include('verifica_login.php');
 
@@ -47,7 +47,7 @@ include('verifica_login.php');
             <a class="nav-link" href="minha_conta.php">
               <i class="material-icons">person</i>
               <p>Minha Conta</p>
-          </a>
+            </a>
           <li class="nav-item active  ">
             <a class="nav-link" href="minha_rede.php">
               <i class="material-icons">bubble_chart</i>
@@ -58,23 +58,30 @@ include('verifica_login.php');
             <a class="nav-link" href="cadastrar_consultor.php">
               <i class="material-icons">group_add</i>
               <p>Cadastrar Consultor</p>
-          </a>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="cadastrar_cliente.php">
+              <i class="material-icons">group_add</i>
+              <p>Cadastrar Cliente</p>
+            </a>
+          </li>
           <li class="nav-item active  ">
             <a class="nav-link" href="meus_clientes.php">
               <i class="material-icons">supervisor_account</i>
               <p>Meus Clientes</p>
-          </a>
-          </li> 
+            </a>
+          </li>
           <li class="nav-item active  ">
             <a class="nav-link" href="financeiro.php">
               <i class="material-icons">$</i>
               <p>Financeiro</p>
-          </a> 
+            </a>
           <li class="nav-item active  ">
             <a class="nav-link" href="biblioteca.php">
               <i class="material-icons">library_books</i>
               <p>Biblioteca</p>
-          </a>
+            </a>
         </ul>
       </div>
     </div>
@@ -161,10 +168,10 @@ include('verifica_login.php');
                 </div>
               </div>
             </div>
-          
+
             <div class="card" style="width: 20rem;">
               <div class="card-header card-header-info">
-                Notificações  
+                Notificações
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Concluir cadastro de cliente x</li>
@@ -178,15 +185,15 @@ include('verifica_login.php');
 
         </div>
       </div>
-      
+
       <footer class="footer">
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
-          </div>
-          <!-- your footer here -->
+        <div class="copyright float-right">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+        </div>
+        <!-- your footer here -->
       </footer>
     </div>
   </div>
