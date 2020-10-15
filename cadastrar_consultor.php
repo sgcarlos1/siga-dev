@@ -76,7 +76,7 @@ include('verifica_login.php');
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./financeiro.php">
-              <i class="material-icons">$</i>
+              <i class="material-icons">attach_money</i>
               <p>Financeiro</p>
             </a>
           </li>
@@ -206,41 +206,38 @@ include('verifica_login.php');
                     <h4>Dados de Endereço<h4>
                   </div>
                   <div class="form- group col-md-12"></div>
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-6">
                     <i class="material-icons prefix">add_location</i>
                     <label for="cep" class="active">Cep</label>
                     <input class="form-control" type="tel" placeholder="Informe o Cep" id="cep" name="cep" required>
                   </div>
 
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-6">
                     <i class="material-icons prefix">location_city</i>
                     <label for="uf" class="active">UF</label>
                     <input class="form-control" type="text" placeholder="UF" name="uf" id="uf" required>
                   </div>
 
-                  <div class="form-group col-md-6"></div>
-
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-6">
                     <i class="material-icons prefix">location_city</i>
                     <label for="cidade" class="active">Cidade</label>
                     <input class="form-control" type="text" placeholder="Cidade" id="cidade" name="cidade" required>
                   </div>
 
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-6">
                     <i class="material-icons prefix">map</i>
                     <label for="bairro" class="active">Bairro</label>
                     <input class="form-control" type="text" placeholder="Bairro" name="bairro" id="bairro" required>
                   </div>
 
-                  <div class="form-group col-md-6"></div>
 
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-8">
                     <i class="material-icons prefix">my_location</i>
                     <label for="endereco" class="active">Endereço</label>
                     <input class="form-control" type="text" placeholder="Seu Endereço" name="logradouro" id="logradouro" required>
                   </div>
 
-                  <div class="form-group col-md-2">
+                  <div class="form-group col-md-4">
                     <i class="material-icons prefix">add_location</i>
                     <label for="nr_end" class="active">Número</label>
                     <input class="form-control" type="text" placeholder="Informe o número" name="nr_end" id="nr_end" required>
@@ -249,11 +246,12 @@ include('verifica_login.php');
               </div>
 
               <div class="step" id="step_3">
-
-                <div class="alert alert-primary col-md-3 p-1">
-                  <h4>Dados de Login<h4>
+                <div class="form-row">
+                  <div class="alert alert-primary py-1">
+                    <h4>Dados de Login<h4>
+                  </div>
                 </div>
-                <div class="form- group col-md-12"></div>
+                <div class="form-group col-md-12"></div>
                 <div class="form-group col-md-4">
                   <i class="material-icons prefix">face</i>
                   <label for="usuario">Usuario</label>
@@ -291,6 +289,7 @@ include('verifica_login.php');
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
+
               </div>
             </form>
 

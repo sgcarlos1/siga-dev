@@ -74,7 +74,7 @@ include('verifica_login.php');
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./financeiro.php">
-              <i class="material-icons">$</i>
+              <i class="material-icons">attach_money</i>
               <p>Financeiro</p>
             </a>
           </li>

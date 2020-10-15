@@ -19,9 +19,11 @@ $row = mysqli_num_rows($result);
 if ($row == 1) {
     $_SESSION['usuario'] = $usuario;
     $pega_nivel = "select nivel from usuario where usuario='$usuario'";
+    $pega_indicador = "select indicador from usuario where usuario='$usuario'";
+    $_SESSION['indicador_p'] = mysqli_fetch_row(mysqli_query($conexao, $pega_indicador)); 
     $row2 = mysqli_query($conexao, $pega_nivel);
     $row3 = mysqli_fetch_row($row2);
-    $_SESSION['nivel'] = $row3[0];
+    $_SESSION['nivel_p'] = $row3[0];
     header('location: escritorio.php');
     exit;
 } else {

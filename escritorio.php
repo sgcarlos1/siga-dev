@@ -74,7 +74,7 @@ include('verifica_login.php');
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./financeiro.php">
-              <i class="material-icons">$</i>
+              <i class="material-icons">attach_money</i>
               <p>Financeiro</p>
             </a>
           </li>
@@ -297,7 +297,6 @@ include('verifica_login.php');
           <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
           <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
         </div>
-        <!-- your footer here -->
       </footer>
     </div>
   </div>
