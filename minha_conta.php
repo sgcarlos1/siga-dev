@@ -28,7 +28,7 @@ include('verifica_login.php');
         Tip 2: you can also add an image using data-image tag
       -->
       <div class="logo">
-        <img class="card-img p-3" src="/siga-me-logo.png">
+        <img class="card-img p-3" src="https://prix.org.br/wp-content/uploads/2020/05/logo-prix-clube-1.png">
         <a href="" class="simple-text logo-normal">
           <?php echo $_SESSION['usuario']; ?>
         </a>
@@ -121,82 +121,61 @@ include('verifica_login.php');
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-success">
-                  <h4 class="card-title">Daniel</h4>
-                  <p class="card-category">Fundador</p>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="patrocinador">Patrocinador</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="nome-usuario">Nome de usuário</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="email">Email</label>
-                          <input type="email" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="primeiro-nome">primeiro nome</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="ultimo-nome">Último nome</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="endereco">Endereço</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="cidade">Cidade</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="estado">Estado</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating" for="cep">CEP</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-success pull-right" for="salvar-dados">Salvar dados</button>
+          <div class="card col-md-8">
+            <div class="card-header card-header-success">
+              <h4 class="card-title"><?php echo $_SESSION['usuario']; ?></h4>
+              <p class="card-category"><?php echo $_SESSION['nivel_p']; ?></p>
+            </div>
+            <div class="card-body col-lg-12">
+              <form>
+                <div class="row">
+                  <div class="form-group col-md-5">
+                    <label class="bmd-label-floating" for="indicador">Indicador</label>
+                    <input type="text" class="form-control" value="<?php echo $_SESSION['indicador_p'] ?>" readonly>
+                  </div>
+
+                  <div class="form-group col-md-2"></div>
+
+                  <div class="form-group col-md-5">
+                    <label class="bmd-label-floating" for="nome-usuario">Nome de usuário</label>
+                    <input type="text" class="form-control" value="<?php echo $_SESSION['usuario']; ?>" readonly>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                    <label class="bmd-label-floating" for="email">Email</label>
+                    <input type="email" class="form-control" value="<?php echo $_SESSION['email_p']; ?>" readonly>
+                  </div>
+
+                  <div class="form-group col-md-2"></div>
+
+                  <div class="form-group col-md-5">
+                    <label class="bmd-label-floating" for="endereco">Endereço</label>
+                    <input type="text" class="form-control" value="<?php echo $_SESSION['endereco_p']; ?>" readonly>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                    <label class="bmd-label-floating" for="endereco">Telefone</label>
+                    <input type="text" class="form-control" value="<?php echo $_SESSION['telefone_p']; ?>" readonly>
+                  </div>
+
+                  <div class="form-group col-md-2"></div>
+
+                  <div class="form-group col-md-5">
+                    <label class="bmd-label-floating" for="endereco">Nascimento</label>
+                    <input type="text" class="form-control" value="<?php echo $_SESSION['nascimento_p']; ?>" readonly>
+                  </div>
+
+                  <div class="form-group col-md-4"></div>
+
+                  <div class="form-group col-md-4">
+                    <button type="submit" class="btn btn-info" for="salvar-dados">Salvar dados</button>
                     <div class="clearfix"></div>
-                  </form>
+                  </div>
+
+                  <div class="form-group col-md-4"></div>
+
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

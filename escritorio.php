@@ -21,14 +21,14 @@ include('verifica_login.php');
 
 <body>
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
       -->
       <div class="logo">
-        <img class="card-img p-3" src="/siga-me-logo.png">
+        <img class="card-img p-3" src="https://prix.org.br/wp-content/uploads/2020/05/logo-prix-clube-1.png">
         <a href="" class="simple-text logo-normal">
           <?php echo $_SESSION['usuario']; ?>
         </a>
@@ -121,7 +121,7 @@ include('verifica_login.php');
         <div class="container-fluid">
           <!-- your content here -->
 
-          <div id="carouselSite" class="carousel slide" data-ride="carousel">
+          <div id="carouselSite" class="carousel slide col-md-10 w-auto mx-auto" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="assets/img/slide1.jpg" class="img-fluid d-block img-thumbnail">
@@ -143,162 +143,74 @@ include('verifica_login.php');
             </a>
           </div>
 
-          <div class="card mb-3">
+          <div class="card col-md-4 ml-4">
+            <div class="card-header-primary">
+              <h2>Usuario</h2>
+            </div>
             <div class="card-body">
-              <h4 class="card-title"><?php echo $_SESSION['usuario']; ?></h4>
-              <p class="card-text">Consultor nível:</p>
-              <h1 class="card-text"><?php echo $_SESSION['nivel']; ?></h1>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <table class="table">
+                <thead><h3 class="card-title"><?php echo $_SESSION['usuario']; ?></h3></thead>
+                <td><p class="card-text">Consultor nível:</p></td>
+                <td><h1 class="card-text"><?php echo $_SESSION['nivel_p']; ?></h1></td>
+              </table>
             </div>
-          </div>
-
-
-
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-header card-header-text card-header-primary">
-                  <div class="card-text">
-                    <h4 class="card-title">Pontos Atuais</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3>1550 Pontos</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 2 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-header card-header-text card-header-info">
-                  <div class="card-text">
-                    <h4 class="card-title">Clientes em análise</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3>13 Clientes</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 2 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-header card-header-text card-header-rose">
-                  <div class="card-text">
-                    <h4 class="card-title">Próxima meta</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h2>Cadastro de 70 Clientes</h2>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 2 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-header card-chart card-header-warning">
-                  <div class="ct-chart" id="dailySalesChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Rede de clientes</h4>
-                  <p class="h6"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 55 </span> Novos clientes no mês</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-header card-chart card-header-success">
-                  <div class="ct-chart" id="completedTasksChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Rede de consultores</h4>
-                  <p class="h6">35 consultores ativos</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 2 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="copyright float-right">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear())
-          </script>
-          <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-          <script src="../assets/js/core/jquery.min.js"></script>
-          <script src="../assets/js/core/popper.min.js"></script>
-          
-          <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-          <!-- Plugin for the momentJs  -->
-          <script src="../assets/js/plugins/moment.min.js"></script>
-          <!--  Plugin for Sweet Alert -->
-          <script src="../assets/js/plugins/sweetalert2.js"></script>
-          <!-- Forms Validations Plugin -->
-          <script src="../assets/js/plugins/jquery.validate.min.js"></script>
-          <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-          <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-          <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-          <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
-          <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-          <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
-          <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-          <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
-          <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-          <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
-          <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-          <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
-          <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-          <script src="../assets/js/plugins/fullcalendar.min.js"></script>
-          <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-          <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
-          <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-          <script src="../assets/js/plugins/nouislider.min.js"></script>
-          <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-          <!-- Library for adding dinamically elements -->
-          <script src="../assets/js/plugins/arrive.min.js"></script>
-          <!--  Google Maps Plugin    -->
-          <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-          <!-- Chartist JS -->
-          <script src="../assets/js/plugins/chartist.min.js"></script>
-          <!--  Notifications Plugin    -->
-          <script src="../assets/js/plugins/bootstrap-notify.js"></script>
-          <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-          <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-        </div>
-      </footer>
     </div>
+
+    <footer class="footer">
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="../assets/js/core/jquery.min.js"></script>
+        <script src="../assets/js/core/popper.min.js"></script>
+
+        <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <!-- Plugin for the momentJs  -->
+        <script src="../assets/js/plugins/moment.min.js"></script>
+        <!--  Plugin for Sweet Alert -->
+        <script src="../assets/js/plugins/sweetalert2.js"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="../assets/js/plugins/jquery.validate.min.js"></script>
+        <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+        <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+        <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+        <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+        <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+        <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+        <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+        <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
+        <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+        <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
+        <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+        <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+        <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+        <script src="../assets/js/plugins/fullcalendar.min.js"></script>
+        <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+        <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
+        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="../assets/js/plugins/nouislider.min.js"></script>
+        <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+        <!-- Library for adding dinamically elements -->
+        <script src="../assets/js/plugins/arrive.min.js"></script>
+        <!--  Google Maps Plugin    -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+        <!-- Chartist JS -->
+        <script src="../assets/js/plugins/chartist.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+      </div>
+    </footer>
   </div>
 </body>
 

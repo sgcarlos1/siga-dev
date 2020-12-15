@@ -28,7 +28,7 @@ include('verifica_login.php');
         Tip 2: you can also add an image using data-image tag
       -->
             <div class="logo">
-                <img class="card-img p-3" src="/siga-me-logo.png">
+                <img class="card-img p-3" src="https://prix.org.br/wp-content/uploads/2020/05/logo-prix-clube-1.png">
                 <a href="" class="simple-text logo-normal">
                     <?php echo $_SESSION['usuario']; ?>
                 </a>

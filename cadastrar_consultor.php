@@ -1,7 +1,6 @@
 <?php
 
 include('verifica_login.php');
-
 ?>
 
 <!doctype html>
@@ -30,7 +29,7 @@ include('verifica_login.php');
         Tip 2: you can also add an image using data-image tag
       -->
       <div class="logo">
-        <img class="card-img p-3" src="/siga-me-logo.png">
+        <img class="card-img p-3" src="https://prix.org.br/wp-content/uploads/2020/05/logo-prix-clube-1.png">
         <a href="" class="simple-text logo-normal">
           <?php echo $_SESSION['usuario']; ?>
         </a>
@@ -320,13 +319,32 @@ include('verifica_login.php');
             document.write(new Date().getFullYear())
           </script>
         </div>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            var $seuCampoCpf = $("#cpf");
+            $seuCampoCpf.mask("999.999.999-99", {
+              reverse: true
+            });
+          });
+          $(document).ready(function() {
+            var $seuCampoCpf = $("#telefone");
+            $seuCampoCpf.mask('(99) 99999-9999', {
+              reverse: true
+            });
+          });
+          $(document).ready(function() {
+            var $seuCampoCep = $("#cep");
+            $seuCampoCep.mask('99999-999', {
+              reverse: false
+            });
+          })
+        </script>
         <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
-
         <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
         <!-- Plugin for the momentJs  -->
         <script src="../assets/js/plugins/moment.min.js"></script>
@@ -382,10 +400,10 @@ include('verifica_login.php');
           confirma_senha.onkeyup = validatePassword;
         </script>
         <script src="/assets/js/procura_cep.js" type="text/javascript"></script>
-        <script src="assets/js/form_fichas.js"></script>
+        <script src="assets/js/form_fichas.js" type="text/javascript"></script>
+
+      </footer>
     </div>
-    </footer>
-  </div>
   </div>
   </div>
   </div>
